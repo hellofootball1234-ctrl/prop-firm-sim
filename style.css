@@ -1,0 +1,132 @@
+/* Change body background to white and dark text */
+body {
+  background-color: #ffffff;
+  color: #222222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow-x: hidden; /* avoid horizontal scroll */
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+/* App container with white background and shadow */
+#app {
+  max-width: 480px;
+  margin: 40px auto;
+  background-color: #fefefe;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+/* Locked container style */
+#locked {
+  margin-top: 100px;
+  font-size: 20px;
+  color: #ff4444;
+  position: relative;
+  z-index: 10;
+}
+
+/* Keep buttons dark to stand out */
+button {
+  background-color: #007a29;
+  border: none;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 28px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #005f1a;
+}
+
+/* Input style */
+input[type=number] {
+  width: 150px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 2px solid #007a29;
+  background-color: #fff;
+  color: #222;
+  outline: none;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Link color */
+a {
+  color: #007a29;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 25px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Status message */
+#status {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  min-height: 24px;
+  color: #007a29;
+}
+
+/* Money falling container */
+#money-fall-container {
+  pointer-events: none; /* so clicks go through */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Money icon style */
+.money {
+  position: absolute;
+  font-size: 24px;
+  opacity: 0.8;
+  animation-name: fall, fadeout;
+  animation-duration: 5s, 5s;
+  animation-timing-function: linear, ease-in;
+  animation-iteration-count: infinite;
+}
+
+/* Keyframes for falling and fading */
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
